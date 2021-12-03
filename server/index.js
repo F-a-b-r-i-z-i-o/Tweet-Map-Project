@@ -42,7 +42,7 @@ function getTweets(req, res) {
     var query = req.params.query;
 
     // Execute a Twitter API call
-    T.get('search/tweets', { q: 'Fabrizi71972935', count: 10 }, gotData);
+    T.get('search/tweets', { q: 'ID-TWEETER-PROFILE', count: 10 }, gotData);
 
     // Callback
     function gotData(err, data) {
