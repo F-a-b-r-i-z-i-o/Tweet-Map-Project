@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Map-Twitter APP</title>
+    <!-----------------------------------------Import---------------------------------------------------------------------------------------->
+
+    <!-- JQUERY -->
+    <script type="text/javascript" src="jquery-3.6.0.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap.css" />
+
+    <!--CSS-->
+    <link rel="stylesheet" href="index.css" />
+
+    <!--Map-->
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.js"></script>
+  </head>
+
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#navbar"
+    data-bs-offset="60"
+    tabindex="0"
+  >
+    <header>
+      <nav
+        class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"
+        id="navbar"
+      >
+        <div class="container">
+          <a class="navbar-brand" href="#">Web app</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#jumbotron"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#awsome">About</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#app"
+                  tabindex="-1"
+                  aria-disabled="true"
+                  >Try it</a
+                >
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!--Barra navigazione-->
+    <div class="container-fluid">
+      <div class="row" id="jumbotron">
+        <div class="col-12 bg">
+          <div>
+            <h1>APP</h1>
+            <p>Download this app</p>
+          </div>
+          <hr />
+          <p>Se vuoi saperne di piu' iscriviti alla mailing-list</p>
+
+          <form
+            id="subscribe"
+            class="
+              row row-cols-lg-auto
+              g-3
+              align-items-center
+              justify-content-center
+            "
+          >
+            <div class="col-12">
+              <label class="visually-hidden" for="inlineFormInputGroupUsername"
+                >Username</label
+              >
+              <div class="input-group">
+                <div class="input-group-text">@</div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inlineFormInputGroupUsername"
+                  placeholder="Username"
+                />
+              </div>
+            </div>
+
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!--Div mezzo-->
+    <div class="row" id="awsome">
+      <div class="col-12 text-center">
+        <h1><b>Map-Twitter App</b></h1>
+        <hr />
+        <h5><b>Map function</b></h5>
+        <p>
+          This app contains a map with which we can geolocate. The map has 3
+          different styles which are visible in the buttons. <br />
+          In the map it is also possible to draw a line between 2 positions and
+          remove it with the appropriate button.
+        </p>
+        <br />
+        <h5><b>Twitter function</b></h5>
+        <p>
+          In the appropriate box it is possible to see the tweets of your own
+          account.
+          <br />
+          With the appropriate button it is possible to send a tweet directly to
+          your twitter profile
+        </p>
+        <hr />
+      </div>
+    </div>
+    <br />
+
+    <!---------------------------------------------------------Principale------------------------------------------------------------------------>
+    <div id="app" class="container-fluid">
+      <!---------------------------------------------------------Div mappa------------------------------------------------------------------------>
+      <div id="mappa-container" class="row-fluid">
+        <div id="circle">
+          <div id="map" style="height: 440px" class="row-fluid"></div>
+        </div>
+
+        <div
+          class="btn-group"
+          class=".col-sm-auto"
+          role="group"
+          aria-label="Basic outlined example"
+        >
+          <button
+            type="button"
+            onclick="geolocate()"
+            class="btn btn-outline-primary"
+          >
+            Geolocate Me
+          </button>
+          <button
+            type="button"
+            onclick="line()"
+            class="btn btn-outline-primary"
+          >
+            Show Route
+          </button>
+          <button
+            type="button"
+            onclick="remove()"
+            class="btn btn-outline-primary"
+          >
+            Delete Route
+          </button>
+        </div>
+
+        <br />
+        <br />
+        <h3 class=".col-sm-auto" id="style-map">
+          Choose the style of your map!
+        </h3>
+
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+          <button
+            type="button"
+            onclick="satellite()"
+            class="btn btn-outline-primary"
+          >
+            Satellite
+          </button>
+          <button
+            type="button"
+            onclick="dark()"
+            class="btn btn-outline-primary"
+          >
+            Dark
+          </button>
+          <button
+            type="button"
+            onclick="light()"
+            class="btn btn-outline-primary"
+          >
+            Light
+          </button>
+        </div>
+      </div>
+
+      <!-------------------------------------------------------Div Twitter------------------------------------------------------------------------->
+      <div class="row-fluid" id="twitter-container">
+        <div class="row-fluid" id="tweetStream"></div>
+        <div class="invia" class="row-fluid" class="container-fluid">
+          <form method="POST" id="form" class="row-fluid">
+            <b>Post this tweet on your account:</b>
+            <br />
+
+            <input
+              type="text"
+              id="tweet"
+              name="tweet"
+              placeholder="Your Tweet"
+              name="tweet"
+            />
+            <br />
+            <button
+              type="submit"
+              id="btn-tweet"
+              class="btn btn-outline-primary"
+              class="row-fluid"
+            >
+              Tweet
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      //display tweet
+      $.ajax({
+        url: "http://localhost:8080/tweets/:query",
+        method: "GET",
+        crossDomain: true,
+        dataType: "json",
+        success: function (data) {
+          var text = "<h5><b>Tweet Text:</b></h5>";
+          console.log(data);
+          console.log(data[0].text);
+          text =
+            text +
+            `<br>${data[0].text}` +
+            `<br>${data[1].text}` +
+            `<br>${data[2].text}`;
+          $("#tweetStream").html(text);
+        },
+        error: function (data) {
+          console.log("ERRORE");
+        },
+      });
+      //send tweet to server
+      $("#form").submit(function (e) {
+        e.preventDefault();
+        $.ajax({
+          url: "http://localhost:8080/tweet",
+          type: "POST",
+          crossDomain: true,
+          dataType: "json",
+          data: $(this).serialize(),
+          success: function (data) {
+            console.log(data);
+            console.log("ok");
+          },
+          error(data) {
+            console.log("ERROR");
+          },
+        });
+        //reload page for show last teweet
+        setTimeout(function () {
+          window.location.reload();
+        }, 10000);
+        setTimeout();
+      });
+    </script>
+
+    <script src="map.js"></script>
+    <script src="bootstrap.js"></script>
+  </body>
+</html>
