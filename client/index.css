@@ -1,0 +1,188 @@
+body {
+    padding-top: 70px;
+    position: relative;
+    font: 1.4rem;
+    background-color: black;
+}
+
+#jumbotron {
+    font-size: 1.4rem;
+    background-color: black;
+}
+
+#jumbotron hr {
+    height: 2px;
+    color: white;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+#jumbotron .bg {
+    background-image: url("rami-al-zayat-w33-zg-dNL4-unsplash.jpg");
+    background-color: #000;
+    height: 850px;
+    background-size: cover;
+    text-align: center;
+    padding-top: 10px;
+    vertical-align: middle;
+    color: white;
+}
+
+#jumbotron h1 {
+    color: white;
+    font-size: 3rem;
+}
+
+#subscribe {
+    margin-top: 30px;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+#awsome {
+    margin-top: 30px;
+    color: white;
+    background-color: black;
+}
+
+#cards {
+    margin: 30px 0px;
+}
+
+.card i {
+    font-size: 2rem;
+    color: blue;
+    padding: 5px;
+}
+
+.card img {
+    height: 250px;
+}
+
+#download {
+    background-color: black;
+    margin: 30px 0;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+
+#mappa-container {
+    height: 700px;
+    width: 40%;
+    padding: 30px;
+    border: 7px solid #0b5ed7;
+    margin: 20px;
+    float: left;
+}
+
+#circle {
+    height: 70%;
+    width: 100%;
+    border: 2px solid #0b5ed7;
+}
+
+#geolocate {
+    width: 100%;
+    margin-top: 5px;
+    border: 5px solid white;
+}
+
+.btn-group {
+    background-color: black;
+    width: 100%;
+    padding-top: 20px;
+}
+
+#style-map {
+    text-align: center;
+    color: red;
+}
+
+#twitter-container {
+    margin: 20px;
+    height: 700px;
+    width: 40%;
+    padding: 30px;
+    border: 7px solid #0b5ed7;
+    float: right;
+}
+
+#square {
+    height: 100%;
+    width: 100%;
+    border: 2px solid #0b5ed7;
+}
+
+#tweetStream {
+    background-color: black;
+    color: white;
+    margin: 20px;
+    margin-left: 5%;
+    border: 2px solid #0b5ed7;
+    text-align: center;
+    height: 80%;
+    width: 90%;
+    padding-top: 70px;
+}
+
+.invia {
+    color: white;
+    margin-left: 19%;
+}
+
+#btn-tweet {
+    height: 3%;
+    width: 70%;
+    margin-top: 2%;
+    text-align: center;
+    font-size: small;
+}
+
+#form {
+    margin-left: 14%;
+    align-items: center;
+}
+
+#tweet {
+    height: 5%;
+    width: 70%;
+}
+
+
+/* If in mobile screen with maximum width 479px. The iPhone screen resolution is 320x480 px (except iPhone4, 640x960) */
+
+@media only screen and (max-width: 479px) {
+    #app {
+        width: 90%;
+    }
+    #mappa-container {
+        width: 90%;
+    }
+    #square {
+        width: 90%;
+    }
+    #twitter-container {
+        width: 90%;
+    }
+    #tweetStream {
+        width: 90%;
+    }
+    #form {
+        width: 90%;
+    }
+    #btn-tweet {
+        width: 90%;
+    }
+    #tweet {
+        width: 90%;
+    }
+    #form {
+        width: 90%;
+    }
+    .invia {
+        width: 90%;
+    }
+}
