@@ -46,15 +46,15 @@ It is possible to change the style of the map.
 
 ![Screenshot 2021-12-03 184549](https://user-images.githubusercontent.com/44865237/144656518-b619c78a-c69c-43f0-9b3e-e5c103951f14.jpg)
 
-Satelitte-Style. 
+**Satelitte-Style.** 
 
 ![Screenshot 2021-12-03 184607](https://user-images.githubusercontent.com/44865237/144656556-0e608558-d79f-4d85-80d8-d39969547f24.jpg)
 
-Dark-Style. 
+**Dark-Style.**
 
 ![Screenshot 2021-12-03 184622](https://user-images.githubusercontent.com/44865237/144656615-0a135797-a7ba-465d-af00-0afaaebb5fad.jpg)
 
-Light-Style.
+**Light-Style.**
 
 This project is very basic and can be taken (improved) for future use. It represents a good foundation on which to start for future projects.
 
