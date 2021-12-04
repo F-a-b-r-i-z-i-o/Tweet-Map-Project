@@ -6,14 +6,14 @@ To use the backend it is necessary to install nodejs.
 The installation of nodejs is different in each operating system. Then see the installation documentation.
 
 
-Before starting the project it is necessary to install the library to interact with twitter.
+**Before starting the project it is necessary to install the library to interact with twitter.**
 
-**npm i twit**
+`npm i twit`
 
 
-To start the backend. 
+**To start the backend.** 
 
-**npm start**
+`npm start`
 
 After starting the server you will be able to see the last 3 tweets posted on your profile.
 
