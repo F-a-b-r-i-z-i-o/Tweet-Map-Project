@@ -20,7 +20,7 @@ var marker2;
 //display map on page
 function mapShow() {
     if (!map) {
-        mapboxgl.accessToken = 'pk.eyJ1IjoiZ2FwMjQiLCJhIjoiY2t2MjN5dXNsMW55czJucXE0Y3Z1cDVubSJ9.33RKSUTCtdnjp9xyxlymkw';
+        mapboxgl.accessToken = '';
         map = new mapboxgl.Map({
             container: 'map', // container ID
             style: 'mapbox://styles/mapbox/streets-v11', // style URL
@@ -28,7 +28,6 @@ function mapShow() {
             zoom: 4, // starting zoom
         });
         map.on('load', () => {
-            console.log("OOOOOOOOOOOOOOOOOOOOOKKKKKKK");
             isMapReady = true;
             var geolocate = new mapboxgl.GeolocateControl();
             map.addControl(geolocate);
